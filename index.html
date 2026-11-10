@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClaudeGPT | Security Simulation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px 15px;
+      background: #f5f7f6;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #202124;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 580px;
+      margin: 35px auto;
+      background: #ffffff;
+      padding: 45px 40px;
+      border: 1px solid #e2e8e5;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .logo {
+      font-size: 48px;
+      color: #079b76;
+      margin-bottom: 10px;
+    }
+
+    .brand-name {
+      font-size: 32px;
+      font-weight: bold;
+      color: #111827;
+    }
+
+    .brand-name span {
+      color: #079b76;
+    }
+
+    .simulation-label {
+      text-align: center;
+      background: #e2f3ea;
+      color: #176348;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .alert {
+      padding: 17px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      margin-bottom: 28px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .login-title {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .demo-credentials {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 15px;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    input:focus {
+      outline: 2px solid #079b76;
+      outline-offset: 1px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #079b76;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #087f65;
+    }
+
+    #result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #176348;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px auto;
+        padding: 30px 22px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .brand-name {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <div class="brand">
+      <div class="logo" aria-hidden="true">&#10043;</div>
+      <div class="brand-name">
+        Claude<span>GPT</span>
+      </div>
+    </div>
+
+    <div class="simulation-label">
+      CYBERSECURITY AWARENESS SIMULATION
+    </div>
+
+    <h1>A new sign-in on Linux</h1>
+
+    <div class="description">
+      <p>
+        This educational scenario simulates a
+        security alert about a new sign-in to
+        your ClaudeGPT account from a Linux device.
+      </p>
+
+      <p>
+        Unexpected login notifications can be
+        used in phishing attacks to encourage
+        users to enter their credentials.
+      </p>
+    </div>
+
+    <div class="alert">
+      <strong>Training Notice</strong>
+      <p>
+        This is an unofficial classroom simulation.
+        Do not use real account credentials,
+        personal email addresses, or passwords.
+      </p>
+    </div>
+
+    <h2 class="login-title">Training Sign In</h2>
+
+    <div class="demo-credentials">
+      <strong>Demonstration Credentials</strong>
+      <div>Username: <code>student-demo</code></div>
+      <div>Password: <code>DemoOnly2026!</code></div>
+    </div>
+
+    <form id="login-form" autocomplete="off">
+
+      <label for="username">Test Username</label>
+      <input
+        id="username"
+        type="text"
+        placeholder="Enter test username"
+        autocomplete="off"
+        required
+      >
+
+      <label for="password">Test Password</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="Enter test password"
+        autocomplete="new-password"
+        required
+      >
+
+      <button type="submit">
+        Simulate Sign In
+      </button>
+
+    </form>
+
+    <p id="result" role="status"></p>
+
+    <footer>
+      ClaudeGPT is an unofficial parody created
+      for cybersecurity awareness education.
+      <br>
+      Not affiliated with OpenAI or Anthropic.
+      <br>
+      No usernames, passwords, or verification
+      codes are transmitted or stored.
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("login-form")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const username =
+          document.getElementById("username");
+
+        const password =
+          document.getElementById("password");
+
+        const result =
+          document.getElementById("result");
+
+        if (
+          username.value === "student-demo" &&
+          password.value === "DemoOnly2026!"
+        ) {
+          result.textContent =
+            "Simulation successful. " +
+            "You used the demonstration credentials.";
+        } else {
+          result.textContent =
+            "This lab accepts demonstration " +
+            "credentials only. Do not enter " +
+            "real account information.";
+        }
+
+        username.value = "";
+        password.value = "";
+      });
+  </script>
+
+</body>
+</html>
