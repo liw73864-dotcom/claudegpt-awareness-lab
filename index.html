@@ -4,124 +4,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ClaudeGPT | Account Security</title>
+<title>ClaudeGPT | Security Notice</title>
+
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;background:#f5f7f6;color:#18221f;
-  font-family:Arial,Helvetica,sans-serif;
+* {
+  box-sizing: border-box;
 }
-.training{
-  background:#e5f4ed;color:#176348;text-align:center;
-  padding:11px 16px;font-size:12px;font-weight:bold;
+
+body {
+  margin: 0;
+  padding: 24px 14px;
+  background: #f5f7f6;
+  color: #17211e;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.card{
-  max-width:570px;margin:45px auto;padding:42px 40px;
-  background:white;border:1px solid #e2e8e5;
-  border-radius:15px;
-  box-shadow:0 10px 35px rgba(0,0,0,.045);
+
+.card {
+  max-width: 560px;
+  margin: 20px auto;
+  padding: 40px 38px;
+  background: #ffffff;
+  border: 1px solid #e2e8e5;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.04);
 }
-.brand{
-  display:flex;justify-content:center;align-items:center;
-  gap:12px;margin-bottom:38px;
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 35px;
 }
-.emblem{
-  width:46px;height:46px;background:#079b76;color:white;
-  border-radius:13px;display:grid;place-items:center;
-  font-size:32px;
+
+.emblem {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: #079b76;
+  border-radius: 12px;
+  color: white;
+  font-size: 31px;
 }
-.wordmark{font-size:30px;font-weight:750;letter-spacing:-1px}
-.wordmark span{color:#079b76}
-.icon{
-  width:64px;height:64px;margin:0 auto 22px;
-  background:#e7f5ee;border-radius:50%;
-  display:grid;place-items:center;
-  font-size:30px;color:#087f65;
+
+.wordmark {
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -1px;
 }
-h1{text-align:center;font-size:29px;font-weight:600}
-.subtitle{
-  text-align:center;color:#626d68;
-  font-size:15px;line-height:1.7;
+
+.wordmark span {
+  color: #079b76;
 }
-.details{
-  border:1px solid #e5e9e7;border-radius:12px;
-  padding:23px;margin:30px 0;
+
+.security-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 22px;
+  display: grid;
+  place-items: center;
+  background: #e7f5ee;
+  border-radius: 50%;
+  color: #087f65;
+  font-size: 29px;
 }
-.device{
-  display:flex;align-items:center;gap:14px;
-  padding-bottom:18px;border-bottom:1px solid #edf0ee;
+
+h1 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 28px;
 }
-.device-icon{font-size:28px}
-.device strong{display:block}
-.device small{color:#687570}
-.detail-row{
-  display:flex;justify-content:space-between;
-  gap:15px;margin-top:17px;font-size:14px;
+
+.subtitle {
+  color: #626d68;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
 }
-.detail-row span:first-child{color:#697570}
-button{
-  width:100%;padding:15px;background:#087f65;
-  color:white;border:0;border-radius:9px;
-  font-size:15px;font-weight:bold;cursor:pointer;
+
+.details {
+  margin: 30px 0;
+  padding: 23px;
+  border: 1px solid #e5e9e7;
+  border-radius: 12px;
 }
-button:hover{background:#066b55}
-#login{display:none;margin-top:28px}
-#login h2{font-size:21px}
-.notice{
-  background:#eef8f2;border:1px solid #cde8d8;
-  border-radius:9px;padding:14px;
-  font-size:13px;line-height:1.7;margin-bottom:22px;
+
+.device {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #edf0ee;
 }
-label{
-  display:block;font-size:14px;font-weight:600;
-  margin:15px 0 8px;
+
+.device-icon {
+  font-size: 28px;
 }
-input{
-  width:100%;padding:14px;font-size:15px;
-  border:1px solid #cbd5d1;border-radius:8px;
+
+.device strong {
+  display: block;
 }
-form button{margin-top:23px}
-#result{
-  margin-top:20px;text-align:center;
-  color:#087f65;line-height:1.6;
+
+.device small {
+  color: #687570;
 }
-footer{
-  margin-top:35px;padding-top:20px;
-  border-top:1px solid #e8ece9;
-  text-align:center;color:#7a8480;
-  font-size:12px;line-height:1.8;
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 17px;
+  font-size: 14px;
 }
-@media(max-width:620px){
-  .card{margin:15px;padding:28px 22px}
-  h1{font-size:25px}
-  .wordmark{font-size:26px}
+
+.detail-row span:first-child {
+  color: #697570;
+}
+
+h2 {
+  margin: 32px 0 10px;
+  font-size: 21px;
+}
+
+.training-note {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  margin: 17px 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbd5d1;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: 2px solid #079b76;
+  outline-offset: 1px;
+}
+
+button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 15px;
+  background: #087f65;
+  border: none;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #066b55;
+}
+
+#result {
+  margin-top: 20px;
+  text-align: center;
+  color: #087f65;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+footer {
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid #e8ece9;
+  color: #7a8480;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .card {
+    margin: 8px auto;
+    padding: 30px 22px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .wordmark {
+    font-size: 26px;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<div class="training">
-  CLASSROOM SECURITY SIMULATION — UNOFFICIAL PARODY
-</div>
-
 <main class="card">
+
   <div class="brand">
-    <div class="emblem">✳</div>
-    <div class="wordmark">Claude<span>GPT</span></div>
+    <div class="emblem" aria-hidden="true">✳</div>
+    <div class="wordmark">
+      Claude<span>GPT</span>
+    </div>
   </div>
 
-  <div class="icon">♧</div>
+  <div class="security-icon" aria-hidden="true">♧</div>
+
   <h1>A new sign-in on Linux</h1>
 
   <p class="subtitle">
-    This simulated security notice describes a
-    sign-in from an unfamiliar Linux device.
-    Review the activity below.
+    A security notification scenario involving
+    a sign-in from an unfamiliar Linux device.
   </p>
 
   <section class="details">
     <div class="device">
-      <div class="device-icon">▣</div>
+      <div class="device-icon" aria-hidden="true">▣</div>
       <div>
         <strong>Linux Device</strong>
         <small>New sign-in activity</small>
@@ -129,79 +236,92 @@ footer{
     </div>
 
     <div class="detail-row">
-      <span>Operating system</span><span>Linux</span>
+      <span>Operating system</span>
+      <span>Linux</span>
     </div>
+
     <div class="detail-row">
-      <span>Activity</span><span>New sign-in</span>
+      <span>Activity</span>
+      <span>New sign-in</span>
     </div>
+
     <div class="detail-row">
-      <span>Device recognition</span><span>Unknown</span>
+      <span>Device recognition</span>
+      <span>Unknown</span>
     </div>
   </section>
 
-  <button id="review" type="button">
-    Review sign-in activity
-  </button>
-
   <section id="login">
-    <h2>Training account verification</h2>
 
-    <div class="notice">
-      This is a demonstration login only.
-      Use the test credentials shown below.
-      Never enter your real password.
-      <p>
-        Username: <strong>student-demo</strong><br>
-        Password: <strong>DemoOnly2026!</strong>
-      </p>
-    </div>
+    <h2>Training Sign In</h2>
+
+    <p class="training-note">
+      Use fictional demonstration credentials only.
+      Do not enter a real email address or password.
+    </p>
 
     <form id="demo-form" autocomplete="off">
-      <label for="user">Test username</label>
-      <input id="user" type="text" required>
 
-      <label for="pass">Test password</label>
-      <input id="pass" type="password"
-             autocomplete="new-password" required>
+      <label for="user">Username / Email</label>
+      <input
+        id="user"
+        type="text"
+        placeholder="Demo username"
+        autocomplete="off"
+        required
+      >
 
-      <button type="submit">Complete simulation</button>
+      <label for="pass">Password</label>
+      <input
+        id="pass"
+        type="password"
+        placeholder="Demo password"
+        autocomplete="new-password"
+        required
+      >
+
+      <button type="submit">Sign In</button>
+
     </form>
 
     <p id="result" role="status"></p>
+
   </section>
 
   <footer>
     ClaudeGPT is an unofficial cybersecurity
-    education parody.<br>
+    awareness simulation.<br>
     Not affiliated with OpenAI or Anthropic.<br>
-    No account credentials are transmitted or stored.
+    No credentials are transmitted or stored.
   </footer>
+
 </main>
 
 <script>
-document.getElementById("review").onclick = () => {
-  document.getElementById("login").style.display = "block";
-  document.getElementById("review").style.display = "none";
-};
-
 document.getElementById("demo-form")
-  .addEventListener("submit", function(e) {
-    e.preventDefault();
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    const user = document.getElementById("user");
-    const pass = document.getElementById("pass");
-    const result = document.getElementById("result");
+    const username =
+      document.getElementById("user");
+
+    const password =
+      document.getElementById("pass");
+
+    const result =
+      document.getElementById("result");
 
     const valid =
-      user.value === "student-demo" &&
-      pass.value === "DemoOnly2026!";
+      username.value === "student-demo" &&
+      password.value === "DemoOnly2026!";
 
     result.textContent = valid
       ? "Simulation completed successfully."
-      : "Use the demonstration credentials only.";
+      : "Please use the classroom demonstration credentials.";
 
     this.reset();
   });
 </script>
+
 </body>
 </html>
