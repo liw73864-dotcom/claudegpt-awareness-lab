@@ -1,145 +1,98 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ClaudeGPT | Sign In</title>
+<title>Login Simulation</title>
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 50px 20px;
-    background: #f5f7f6;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-  }
-  .card {
-    width: 100%;
-    max-width: 400px;
-    background: #ffffff;
-    padding: 40px 35px;
-    border-radius: 15px;
-    border: 1px solid #e2e8e5;
-    box-shadow: 0 8px 30px rgba(0,0,0,.04);
-  }
-  /* 顶部 Logo */
-  .brand {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 35px;
-  }
-  .emblem {
-    width: 42px;
-    height: 42px;
-    display: grid;
-    place-items: center;
-    background: #079b76;
-    border-radius: 10px;
-    color: white;
-    font-size: 28px;
-  }
-  .wordmark {
-    font-size: 28px;
-    font-weight: 750;
-  }
-  .wordmark span { color: #079b76; }
-  
-  /* 表单 */
-  label {
-    display: block;
-    margin: 15px 0 8px;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cbd5d1;
-    border-radius: 8px;
-    font-size: 15px;
-  }
-  input:focus {
-    outline: 2px solid #079b76;
-    outline-offset: 1px;
-  }
-  button {
-    width: 100%;
-    margin-top: 25px;
-    padding: 14px;
-    background: #087f65;
-    border: none;
-    border-radius: 8px;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  button:hover { background: #066b55; }
-  #result {
-    margin-top: 15px;
-    text-align: center;
-    color: #087f65;
-    font-size: 14px;
-    line-height: 1.6;
-  }
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+}
+
+form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbd5d1;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 15px;
+  background: #087f65;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.note {
+  margin-top: 18px;
+  color: #777;
+  font-size: 12px;
+  text-align: center;
+}
+
+#result {
+  text-align: center;
+  font-size: 14px;
+}
 </style>
 </head>
 <body>
 
-<main class="card">
-  <!-- 顶部 Logo -->
-  <div class="brand">
-    <div class="emblem">✳</div>
-    <div class="wordmark">Claude<span>GPT</span></div>
-  </div>
+<form id="login" autocomplete="off">
+  <label for="username">Username / Email</label>
+  <input id="username"
+         placeholder="Demo username"
+         required>
 
-  <!-- 表单输入区域 -->
-  <form id="demo-form">
-    <label for="user">Username / Email</label>
-    <input id="user" type="text" placeholder="Demo username" required autocomplete="off">
+  <label for="password">Password</label>
+  <input id="password"
+         type="password"
+         placeholder="Demo password"
+         autocomplete="new-password"
+         required>
 
-    <label for="pass">Password</label>
-    <input id="pass" type="password" placeholder="Demo password" required autocomplete="new-password">
+  <button type="submit">Sign In</button>
 
-    <button type="submit">Sign In</button>
-  </form>
-
-  <!-- 结果提示 -->
   <p id="result" role="status"></p>
-</main>
+
+  <p class="note">
+    Classroom simulation — use fictional credentials only.
+  </p>
+</form>
 
 <script>
-document.getElementById("demo-form").addEventListener("submit", function(event) {
-  event.preventDefault(); // 阻止表单默认刷新页面
-
-  // 1. 获取数据（收集输入内容）
-  const username = document.getElementById("user").value;
-  const password = document.getElementById("pass").value;
-  const result = document.getElementById("result");
-
-  // 2. 执行数据收集（这里用 localStorage 模拟收集存储，并在控制台打印）
-  console.log("--- 收集到数据 ---");
-  console.log("账号:", username);
-  console.log("密码:", password);
-  
-  // 将收集到的数据保存到浏览器本地存储中
-  localStorage.setItem("collected_username", username);
-  localStorage.setItem("collected_password", password);
-
-  // 3. 保留原有的验证逻辑（根据你的原代码）
-  const valid = username === "student-demo" && password === "DemoOnly2026!";
-
-  // 4. 显示结果
-  result.textContent = valid 
-    ? "Simulation completed successfully." 
-    : "Please use the classroom demonstration credentials.";
-
-  // 5. 重置表单
-  this.reset();
-});
+document.getElementById("login")
+  .addEventListener("submit", function(e) {
+    e.preventDefault();
+    this.reset();
+    document.getElementById("result").textContent =
+      "Simulation completed.";
+  });
 </script>
 
 </body>
