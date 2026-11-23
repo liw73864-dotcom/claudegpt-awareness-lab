@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ClaudeGPT | Security Notice</title>
+<title>ClaudeGPT | Sign In</title>
 
 <style>
 * {
@@ -29,6 +28,7 @@ body {
   box-shadow: 0 8px 30px rgba(0,0,0,.04);
 }
 
+/* 顶部 Logo 样式 */
 .brand {
   display: flex;
   align-items: center;
@@ -58,82 +58,7 @@ body {
   color: #079b76;
 }
 
-.security-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 22px;
-  display: grid;
-  place-items: center;
-  background: #e7f5ee;
-  border-radius: 50%;
-  color: #087f65;
-  font-size: 29px;
-}
-
-h1 {
-  margin: 0 0 20px;
-  text-align: center;
-  font-size: 28px;
-}
-
-.subtitle {
-  color: #626d68;
-  text-align: center;
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.details {
-  margin: 30px 0;
-  padding: 23px;
-  border: 1px solid #e5e9e7;
-  border-radius: 12px;
-}
-
-.device {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid #edf0ee;
-}
-
-.device-icon {
-  font-size: 28px;
-}
-
-.device strong {
-  display: block;
-}
-
-.device small {
-  color: #687570;
-}
-
-.detail-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  margin-top: 17px;
-  font-size: 14px;
-}
-
-.detail-row span:first-child {
-  color: #697570;
-}
-
-h2 {
-  margin: 32px 0 10px;
-  font-size: 21px;
-}
-
-.training-note {
-  color: #64748b;
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 22px;
-}
-
+/* 表单样式 */
 label {
   display: block;
   margin: 17px 0 8px;
@@ -179,26 +104,11 @@ button:hover {
   line-height: 1.6;
 }
 
-footer {
-  margin-top: 35px;
-  padding-top: 20px;
-  border-top: 1px solid #e8ece9;
-  color: #7a8480;
-  text-align: center;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
 @media (max-width: 600px) {
   .card {
     margin: 8px auto;
     padding: 30px 22px;
   }
-
-  h1 {
-    font-size: 25px;
-  }
-
   .wordmark {
     font-size: 26px;
   }
@@ -210,6 +120,7 @@ footer {
 
 <main class="card">
 
+  <!-- 仅保留最上面的 Logo 名称 -->
   <div class="brand">
     <div class="emblem" aria-hidden="true">✳</div>
     <div class="wordmark">
@@ -217,49 +128,8 @@ footer {
     </div>
   </div>
 
-  <div class="security-icon" aria-hidden="true">♧</div>
-
-  <h1>A new sign-in on Linux</h1>
-
-  <p class="subtitle">
-    A security notification scenario involving
-    a sign-in from an unfamiliar Linux device.
-  </p>
-
-  <section class="details">
-    <div class="device">
-      <div class="device-icon" aria-hidden="true">▣</div>
-      <div>
-        <strong>Linux Device</strong>
-        <small>New sign-in activity</small>
-      </div>
-    </div>
-
-    <div class="detail-row">
-      <span>Operating system</span>
-      <span>Linux</span>
-    </div>
-
-    <div class="detail-row">
-      <span>Activity</span>
-      <span>New sign-in</span>
-    </div>
-
-    <div class="detail-row">
-      <span>Device recognition</span>
-      <span>Unknown</span>
-    </div>
-  </section>
-
+  <!-- 仅保留表单部分 -->
   <section id="login">
-
-    <h2>Training Sign In</h2>
-
-    <p class="training-note">
-      Use fictional demonstration credentials only.
-      Do not enter a real email address or password.
-    </p>
-
     <form id="demo-form" autocomplete="off">
 
       <label for="user">Username / Email</label>
@@ -285,15 +155,7 @@ footer {
     </form>
 
     <p id="result" role="status"></p>
-
   </section>
-
-  <footer>
-    ClaudeGPT is an unofficial cybersecurity
-    awareness simulation.<br>
-    Not affiliated with OpenAI or Anthropic.<br>
-    No credentials are transmitted or stored.
-  </footer>
 
 </main>
 
@@ -302,14 +164,9 @@ document.getElementById("demo-form")
   .addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const username =
-      document.getElementById("user");
-
-    const password =
-      document.getElementById("pass");
-
-    const result =
-      document.getElementById("result");
+    const username = document.getElementById("user");
+    const password = document.getElementById("pass");
+    const result = document.getElementById("result");
 
     const valid =
       username.value === "student-demo" &&
