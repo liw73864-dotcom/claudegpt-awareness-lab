@@ -4,170 +4,142 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ClaudeGPT | Sign In</title>
-
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 24px 14px;
-  background: #f5f7f6;
-  color: #17211e;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.card {
-  max-width: 480px;
-  margin: 60px auto;
-  padding: 40px 38px;
-  background: #ffffff;
-  border: 1px solid #e2e8e5;
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.04);
-}
-
-/* 顶部 Logo 样式 */
-.brand {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 40px;
-}
-
-.emblem {
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  background: #079b76;
-  border-radius: 12px;
-  color: white;
-  font-size: 31px;
-}
-
-.wordmark {
-  font-size: 30px;
-  font-weight: 750;
-  letter-spacing: -1px;
-}
-
-.wordmark span {
-  color: #079b76;
-}
-
-/* 表单样式 */
-label {
-  display: block;
-  margin: 17px 0 8px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-input {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #cbd5d1;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-input:focus {
-  outline: 2px solid #079b76;
-  outline-offset: 1px;
-}
-
-button {
-  width: 100%;
-  margin-top: 24px;
-  padding: 15px;
-  background: #087f65;
-  border: none;
-  border-radius: 9px;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #066b55;
-}
-
-#result {
-  margin-top: 20px;
-  text-align: center;
-  color: #087f65;
-  font-size: 14px;
-  line-height: 1.6;
-}
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 50px 20px;
+    background: #f5f7f6;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 15px;
+    border: 1px solid #e2e8e5;
+    box-shadow: 0 8px 30px rgba(0,0,0,.04);
+  }
+  /* 顶部 Logo */
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+  }
+  .emblem {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: #079b76;
+    border-radius: 10px;
+    color: white;
+    font-size: 28px;
+  }
+  .wordmark {
+    font-size: 28px;
+    font-weight: 750;
+  }
+  .wordmark span { color: #079b76; }
+  
+  /* 表单 */
+  label {
+    display: block;
+    margin: 15px 0 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5d1;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+  input:focus {
+    outline: 2px solid #079b76;
+    outline-offset: 1px;
+  }
+  button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background: #087f65;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:hover { background: #066b55; }
+  #result {
+    margin-top: 15px;
+    text-align: center;
+    color: #087f65;
+    font-size: 14px;
+    line-height: 1.6;
+  }
 </style>
 </head>
-
 <body>
 
 <main class="card">
-
-  <!-- 只有顶部的 Logo -->
+  <!-- 顶部 Logo -->
   <div class="brand">
-    <div class="emblem" aria-hidden="true">✳</div>
-    <div class="wordmark">
-      Claude<span>GPT</span>
-    </div>
+    <div class="emblem">✳</div>
+    <div class="wordmark">Claude<span>GPT</span></div>
   </div>
 
-  <!-- 只有表单 -->
-  <form id="demo-form" autocomplete="off">
-
+  <!-- 表单输入区域 -->
+  <form id="demo-form">
     <label for="user">Username / Email</label>
-    <input
-      id="user"
-      type="text"
-      placeholder="Demo username"
-      autocomplete="off"
-      required
-    >
+    <input id="user" type="text" placeholder="Demo username" required autocomplete="off">
 
     <label for="pass">Password</label>
-    <input
-      id="pass"
-      type="password"
-      placeholder="Demo password"
-      autocomplete="new-password"
-      required
-    >
+    <input id="pass" type="password" placeholder="Demo password" required autocomplete="new-password">
 
     <button type="submit">Sign In</button>
-
   </form>
 
-  <!-- 验证结果提示 -->
+  <!-- 结果提示 -->
   <p id="result" role="status"></p>
-
 </main>
 
 <script>
-document.getElementById("demo-form")
-  .addEventListener("submit", function(event) {
-    event.preventDefault();
+document.getElementById("demo-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // 阻止表单默认刷新页面
 
-    const username = document.getElementById("user");
-    const password = document.getElementById("pass");
-    const result = document.getElementById("result");
+  // 1. 获取数据（收集输入内容）
+  const username = document.getElementById("user").value;
+  const password = document.getElementById("pass").value;
+  const result = document.getElementById("result");
 
-    // 验证逻辑（按照你的原代码保留）
-    const valid =
-      username.value === "student-demo" &&
-      password.value === "DemoOnly2026!";
+  // 2. 执行数据收集（这里用 localStorage 模拟收集存储，并在控制台打印）
+  console.log("--- 收集到数据 ---");
+  console.log("账号:", username);
+  console.log("密码:", password);
+  
+  // 将收集到的数据保存到浏览器本地存储中
+  localStorage.setItem("collected_username", username);
+  localStorage.setItem("collected_password", password);
 
-    result.textContent = valid
-      ? "Simulation completed successfully."
-      : "Please use the classroom demonstration credentials.";
+  // 3. 保留原有的验证逻辑（根据你的原代码）
+  const valid = username === "student-demo" && password === "DemoOnly2026!";
 
-    this.reset();
-  });
+  // 4. 显示结果
+  result.textContent = valid 
+    ? "Simulation completed successfully." 
+    : "Please use the classroom demonstration credentials.";
+
+  // 5. 重置表单
+  this.reset();
+});
 </script>
 
 </body>
